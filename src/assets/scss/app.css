@@ -120,10 +120,18 @@ body {
   padding-left: 15px;
 }
 
+.divDivisor6 {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
 .divRadio {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
-  background-color: #e9ecef;
+  background-color: #4b73f0;
   border-radius: 0.3rem;
 }
 
@@ -398,6 +406,45 @@ textarea {
 @media (min-width: 576px) {
   .divRadio {
     padding: 4rem 2rem;
+  }
+}
+
+.colorTable {
+  border-collapse: collapse !important;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+.colorTable thead tr th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #e9ecef;
+  background-color: #1946bb;
+  color: #fff;
+}
+
+.colorTable tbody tr td {
+  background-color: #fff !important;
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #e9ecef;
+}
+
+.colorTable:hover {
+  background-color: #fff;
+}
+
+.colorTable:hover tbody td,
+.colorTable:hover tbody th {
+  background-color: #ffaf17;
+}
+
+@media (max-width: 991px) {
+  .divTabla {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
   }
 }
 /*# sourceMappingURL=app.css.map */

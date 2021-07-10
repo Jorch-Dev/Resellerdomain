@@ -1,28 +1,15 @@
 import Axios from 'axios'
 import { urlAPI } from './urlAPI'
 
-export default async function buyDomain() {
+export default async function buyDomain(obj) {
     let url = urlAPI + "v1/domains/suggest";
-    let urlCloud = urlAPI
-    let formData = new FormData();
-    // formData.append("file", obj.image[0]);
-    formData.append("upload_preset", `plantilla-afiliado`);
+    let key = "3mM44UbgnMuqrP_QkBULjFqqBdTu3oCpRZJ7z:24GW17xnmuCesfrhqQdipv"
+    let accept = "*/*"
+    url= `${url}?query=${obj.title}&country=${obj.country}&sources=${obj.sources}&tlds=${obj.tdl}&waitMs=${obj.waitMs}`
 
-         await Axios.post(urlCloud, formData)
-            .then(response => {
-                    Axios.post(url, {
-                        "query": '',
-                        "country": '',
-                        "sources": '',
-                        "tlds": '',
-                        "waitMs": ''
-                    }).then(response => {             
-                    })
-                    .catch(function (error)  {
-                    })
-                    
-            })
-            .catch(error => {
-                console.log("Error: " + error)
-            })
+    console.log(url)
+
+    const result = await Axios.get(url,{ headers: { Authorization: `sso-key ${key}`} })
+    const data = result.data
+    console.log(data)
 }

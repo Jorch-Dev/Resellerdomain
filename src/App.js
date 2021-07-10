@@ -7,7 +7,7 @@ function App() {
     <Fragment>
       <div className="divbar">
         <div className="container">
-          <h1 style={{color:'#fff'}}>ROCA</h1>
+          <h2 style={{color:'#fff'}}>RocaFunnels</h2>
         </div>
       </div>
         <Planes />
