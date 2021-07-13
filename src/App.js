@@ -1,17 +1,15 @@
 import React, { Fragment } from "react";
-import Planes from "./components/planes";
-import "./assets/scss/app.css";
+import { Buscador } from "./components/buscador";
+import { DatosCompra } from "./components/datosCompra"
+import { NavBar } from "./components/navBar"
 
 function App() {
   return (
-    <Fragment>
-      <div className="divbar">
-        <div className="container">
-          <h2 style={{color:'#fff'}}>RocaFunnels</h2>
-        </div>
-      </div>
-        <Planes />
-    </Fragment>
+      <Fragment>
+        <NavBar />
+        <DatosCompra />
+        {/* <Buscador /> */}
+      </Fragment>
   );
 }
 
