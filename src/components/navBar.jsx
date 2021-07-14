@@ -5,7 +5,7 @@ export const NavBar = () => {
   return (
     <div>
       <nav className="divbar navbar-expand-lg">
-        <div className="container-fluid">
+        <div className="container">
           <h2 style={{ color: "#fff" }}>RocaFunnels</h2>
         </div>
       </nav>

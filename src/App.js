@@ -9,6 +9,7 @@ function App() {
         <NavBar />
         <DatosCompra />
         {/* <Buscador /> */}
+        <NavBar />
       </Fragment>
   );
 }

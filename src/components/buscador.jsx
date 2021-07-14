@@ -63,11 +63,10 @@ export const Buscador = () => {
               <h1>WWW.</h1>
             </label>
           </div>
-          <div className="divDivisor6">
+          <div className="divDivisor5">
             <p>
               <input
                 type="text"
-                className="form-control"
                 placeholder="Verifique la disponibilidad de su dominio!"
                 style={{ border: "2px solid #1946bb" }}
                 onChange={(e) => obtenerDominio(e)}
@@ -85,7 +84,7 @@ export const Buscador = () => {
               Verificar
             </button>
           </div>
-          <div className="divDivisor1">
+          <div className="divDivisor2">
             <Carrito extenciones={extenciones} />
           </div>
         </div>
