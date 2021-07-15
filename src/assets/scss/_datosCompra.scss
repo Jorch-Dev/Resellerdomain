@@ -9,29 +9,27 @@ $verde: #bbce00;
 #divHeader {
   position: relative;
   width: 100%;
-  min-height: 1px;
+  height:100%;
   padding-right: 15px;
   padding-left: 15px;
-  -ms-flex-preferred-size: 0;
-  flex-basis: 0;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  max-width: 100%;
-  background-color: #e9ecef;
+  margin-bottom: 3%;
 }
 
 #divInformacion {
-  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
   width: 100%;
   border: 2px solid $azul2;
   border-radius: 10px;
+  margin-bottom: 3%;
 }
 
 .breadcrumb {
-  padding: 0.75rem 1rem;
   margin-bottom: 1rem;
   list-style: none;
-  background-color: #e9ecef;
+  background-color:  $white;
   border-radius: 0.25rem;
 }
 .breadcrumb::after {
@@ -47,7 +45,7 @@ $verde: #bbce00;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   color: #868e96;
-  content: "/";
+  content: ">";
 }
 .breadcrumb-item + .breadcrumb-item:hover::before {
   text-decoration: underline;

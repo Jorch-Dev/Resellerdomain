@@ -6,6 +6,44 @@ $naranja: #fc7700;
 $amarillo: #ffaf17;
 $verde: #bbce00;
 
+.divbar {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: $azul1;
+  width: 100%;
+}
+.divbar > .container,
+.divbar > .container-fluid {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.divResultados {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: rgb(235, 235, 230);
+  border-radius: 0.3rem;
+}
+@media (min-width: 576px) {
+  .divResultados {
+    padding: 4rem 2rem;
+  }
+}
+
 .colorTable {
     border-collapse: collapse !important;
     width: 100%;
@@ -21,20 +59,15 @@ $verde: #bbce00;
   }
   
   .colorTable tbody tr td {
-    background-color: #fff !important;
+    background-color: #fff ;
     padding: 0.75rem;
     vertical-align: top;
     border-top: 1px solid #e9ecef;
   }
   
-  .colorTable:hover {
-    background-color: $white;
-  }
-  
-  .colorTable:hover tbody td,
-  .colorTable:hover tbody th {
-    background-color: $amarillo;
-  }
+  // .colorTable:hover tbody tr td {
+  //   background-color: $amarillo;
+  // }
 
   .alert {
     padding: 0.75rem 1.25rem;

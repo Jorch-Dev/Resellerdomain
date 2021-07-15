@@ -56,18 +56,15 @@ body {
   margin-left: auto;
   padding-right: 15px;
   padding-left: 15px;
+  width: 100%;
 }
-
-.divArmador {
+.row {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
-  padding-left: 5%;
-  padding-top: 3%;
-  padding-bottom: 3%;
 }
 
 .divDivisor,
@@ -153,7 +150,6 @@ body {
   -ms-flex: 0 0 91.666667%;
   flex: 0 0 91.666667%;
   max-width: 91.666667%;
-  background-color: $naranja;
 }
 .divDivisor12 {
   -ms-flex: 0 0 100%;
@@ -179,14 +175,25 @@ label {
   margin-bottom: 0.5rem;
 }
 
-input[type=text], input[type=password] {
+// input[type=text], input[type=password] {
+//   width: 100%;
+//   padding: 12px 20px;
+//   margin: 3px 0;
+//   display: inline-block;
+//   border: 1px solid #ccc;
+//   box-sizing: border-box;
+// }
+
+.controles {
+  display: block;
   width: 100%;
-  padding: 12px 20px;
-  margin: 3px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  color: #495057;
+  background-color: #fff;
+  border-radius: 0.25rem;
 }
+
 .h1,
 .h2,
 .h3,

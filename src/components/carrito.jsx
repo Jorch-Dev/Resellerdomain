@@ -1,21 +1,32 @@
 import React, { Fragment, useState } from "react";
-import { connect } from "react-redux";
+import { Link } from 'react-router-dom'
 import "../assets/scss/app.css";
-import carrito from "../assets/icons/carrito.svg";
 
-export const Carrito = () => {
-    const [carMarket, setCarMarket] = useState([]);
+export const Carrito = ({ subtotal }) => {
+  const [carMarket, setCarMarket] = useState([]);
+
+  const llenarDatos = () => {};
   return (
     <Fragment>
-      <div className="container">
-        <div className="divArmador">
-          <button className="btn btn-block">
-            <span>
-              <img src={carrito} width="20px" height="20px" />
-            </span>
-          </button>
+      {/* Carrito */}
+      <div class="summary">
+        <div class="summary-item">
+          <h5 style={{ textAlign: "center" }}>El subtotal ya incluye el IVA</h5>
         </div>
+        <div class="summary-item">
+          <label>Subtotal:</label>
+          <span class="price">{subtotal}</span>
+        </div>
+        <Link to="/datosCompra">
+          <button
+            class="btn btn-primary btn-lg btn-block"
+            id="checkout-btn"
+          >
+            Crear orden
+          </button>
+        </Link>
       </div>
+      {/* EndCarrito */}
     </Fragment>
   );
 };

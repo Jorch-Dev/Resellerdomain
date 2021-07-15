@@ -1,10 +1,7 @@
 import React, { Fragment, useState } from "react";
 import "../assets/scss/app.css";
-import servicio from "../services/buscadorDominios";
-import { Carrito } from "./carrito"
-import { Resultados } from "./resultados"
-
-
+import { suggest } from "../services/buscadorDominios";
+import { Resultados } from "./resultados";
 
 export const Buscador = () => {
   const [dominio, setDominio] = useState("");
@@ -21,7 +18,6 @@ export const Buscador = () => {
     }
 
     setDominio(domini);
-    localStorage.setItem("Dominio", dominio);
   };
 
   const obtienebusqueda = async () => {
@@ -33,22 +29,20 @@ export const Buscador = () => {
 
     var objBuscador = {
       title: dominio,
-      tdl: "com",
+      tdl: "com,mx",
       country: "MX",
       sources: "keywordspin",
       waitMs: "1000",
     };
 
-    await servicio(objBuscador);
+    await suggest(objBuscador);
   };
-
- 
 
   return (
     <Fragment>
       <div className="container">
-        <div className="divArmador">
-          <div className="divDivisor12">
+        <div className="row">
+          <div className="col-md-12">
             <p className="h1" style={{ textAlign: "center", color: "#fc7700" }}>
               Busqueda de dominios
             </p>
@@ -57,16 +51,15 @@ export const Buscador = () => {
             </p>
           </div>
         </div>
-        <div className="divArmador">
-          <div className="divDivisor1">
-            <label style={{ color: "#fc7700" }}>
-              <h1>WWW.</h1>
-            </label>
+        <div className="row">
+          <div className="col-md-2">
+            <h1 style={{ color: "#fc7700" }}>WWW.</h1>
           </div>
-          <div className="divDivisor5">
+          <div className="col-md-6">
             <p>
               <input
                 type="text"
+                className="form-control"
                 placeholder="Verifique la disponibilidad de su dominio!"
                 style={{ border: "2px solid #1946bb" }}
                 onChange={(e) => obtenerDominio(e)}
@@ -79,17 +72,18 @@ export const Buscador = () => {
               <></>
             )}
           </div>
-          <div className="divDivisor2">
-            <button className="btn btn-block" onClick={() => obtienebusqueda()}>
+          <div className="col-md-2">
+            <button
+              className="btn btn-block btn-info"
+              onClick={() => obtienebusqueda()}
+            >
               Verificar
             </button>
           </div>
-          <div className="divDivisor2">
-            <Carrito extenciones={extenciones} />
-          </div>
+          <div className="col-md-2"></div>
         </div>
-        <hr />   
-        <Resultados />   
+        <hr />
+        <Resultados />
       </div>
     </Fragment>
   );
