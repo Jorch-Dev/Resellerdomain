@@ -1,25 +1,30 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Carrito } from "./carrito";
+import { getState } from "../redux/domSlice"
 
 export const ShoppingCart = () => {
+  const [listaDominios, setListaDominios] = useState([])
   const [subTotal, setSubTotal] = useState(null)
 
-const actualizaSubTotal = (e) => {
-  let ano = e.target.value;
-  console.log(ano)
-  const total = 179.90
-  let precio = 0
-  if (ano == 1) {
-    precio = total
+  const actualizaSubTotal = (e) => {
+    let ano = e.target.value;
+    console.log(ano)
+    const total = 179.90
+    let precio = 0
+    if (ano == 1) {
+      precio = total
+    }
+    if (ano == 2) {
+      precio = total * ano
+    }
+    if (ano == 3) {
+      precio = total * ano
+    }
+    setSubTotal(precio)
   }
-  if (ano == 2) {
-    precio = total * ano
-  }
-  if (ano == 3) {
-    precio = total * ano
-  }
-  setSubTotal(precio)
-}
+
+  const data = getState()
+  console.log(data)
 
   return (
     <Fragment>

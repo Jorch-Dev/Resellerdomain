@@ -6,9 +6,12 @@ import { ShoppingCart } from "./components/shoppingCart";
 import { Pago } from "./components/pago";
 import { Resultados } from "./components/resultados"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { selectDom } from "./redux/domSlice"
+import { useSelector } from "react-redux"
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  const extencion = useSelector(selectDom);
   return (
     <Fragment>
       <Router>
@@ -21,7 +24,7 @@ function App() {
             <Resultados />
           </Route>
           <Route path="/shoppingCar">
-            <ShoppingCart />
+            { extencion != null ? <ShoppingCart /> : <Buscador /> }
           </Route>
           <Route path="/pago">
             <Pago />

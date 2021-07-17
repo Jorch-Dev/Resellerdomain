@@ -1,14 +1,9 @@
-import { createStore } from 'redux'
+import { configureStore } from "@reduxjs/toolkit"
+import domProducer from "./domSlice";
 
-const initialState = {
-    dominios: []
-}
-
-const reducerBuscaDominio = (state = initialState, objAction) => {
-
-    console.log(objAction)
-    return state
-}
-
-export default createStore(reducerBuscaDominio)
+export default configureStore({
+    reducer: {
+        Dominios: domProducer,
+    },
+});
 
